@@ -5,7 +5,6 @@ import javax.persistence.*
 
 @Entity
 data class Holiday (
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Int? = null,

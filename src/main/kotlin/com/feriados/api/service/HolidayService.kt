@@ -30,5 +30,9 @@ class HolidayService(
         holidayRepository.save(holiday)
     }
 
+    fun getHoliday(ibgeCode: Int?, date: String): List<Holiday> {
+        return holidayRepository.findByIbgeCodeAndDate(ibgeCode, date)
+    }
+
 
 }

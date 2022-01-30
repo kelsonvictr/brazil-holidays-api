@@ -17,9 +17,13 @@ class HolidayController(
         return holidayService.getAll()
     }
 
+    @GetMapping("/{ibgeCode}/{date}")
+    fun getHoliday(@PathVariable ibgeCode: Int?, @PathVariable date: String): List<Holiday> {
+        return holidayService.getHoliday(ibgeCode, date)
+    }
+
     @PutMapping("/{codIbge}/{dateOrName}")
     fun create(@RequestBody request: Holiday?, @PathVariable codIbge: Int?, @PathVariable dateOrName: String) {
-        val holidayHelper = HolidayHelper()
         if (NonFixedHolidayEnum.values().any { it.nome == dateOrName }) {
             holidayService.manageNonFixedHolidays(codIbge, dateOrName)
         } else {

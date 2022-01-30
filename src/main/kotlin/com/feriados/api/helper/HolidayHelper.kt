@@ -14,7 +14,6 @@ class HolidayHelper {
             NonFixedHolidayEnum.SEXTASANTA.nome -> getEasterSundayDate(Year.now().getValue())?.minusDays(2)
             else -> null
         }
-
         return getHolidayDate
     }
 
